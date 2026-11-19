@@ -49,7 +49,7 @@ A lightweight, robust, command-line personal finance and expense tracking tool b
 ├── CLAUDE.md                   # Compatible mirror of AGENTS.md
 ├── AI_USAGE_LOG.md             # 5 detailed prompt-output-correction entries
 ├── REFLECTION.md               # 1/2-page retrospective, permissions note & integration details
-├── DEMO_GUIDE.md               # 3-5 minute demonstration script for live recording
+├── Demo.mp4                    # 3-5 minute demonstration video recording
 └── README.md                   # This documentation
 ```
 
