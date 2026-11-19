@@ -4,6 +4,19 @@ A lightweight, robust, command-line personal finance and expense tracking tool b
 
 ---
 
+## 🎥 Demo Video Walkthrough
+
+A complete 3–5 minute demonstration video is included in the root directory: **`Demo.mp4`**.
+
+The recording walks through:
+1. **Automated Testing & Git Hooks:** Execution of the 21-test unit suite and automated commit gating via `.githooks/pre-commit`.
+2. **Input Validation & Edge Cases:** Resilient handling of negative amounts, zero values, and invalid calendar dates (e.g. `2026-02-30`) with zero crashes.
+3. **Core CLI Operations:** Adding expenses, filtering by category and date ranges, editing, and deleting by ID.
+4. **Stretch Goals:** Monthly budget limit configuration, automated limit-breach warning alerts, formatted monthly ASCII text reports, and CSV export.
+5. **AI Workflow Integration:** Tour of `AGENTS.md` instructions, the `.skills/` feature lifecycle, and `AI_USAGE_LOG.md`.
+
+---
+
 ## 🌟 Features
 
 ### 📋 Must-Have Features
