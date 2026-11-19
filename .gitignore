@@ -16,6 +16,7 @@ htmlcov/
 # User runtime data files
 expenses.json
 *.csv
+*.zip
 expenses_test*.json
 *.tmp
 .DS_Store
