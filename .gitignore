@@ -1,0 +1,21 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Test output and artifacts
+.coverage
+htmlcov/
+.pytest_cache/
+
+# User data files (default data file can be tracked with a sample or ignored)
+# Keep sample_expenses.json tracked, but ignore local test runs
+expenses_test*.json
+*.tmp
+.DS_Store
+Thumbs.db

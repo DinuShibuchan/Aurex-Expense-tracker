@@ -1,0 +1,41 @@
+#!/bin/sh
+# Pre-commit hook for Expense Tracker
+# Ensures all code compiles and all unit tests pass before allowing a commit.
+
+echo "=================================================="
+echo "🔍 Running pre-commit validation hook..."
+echo "=================================================="
+
+# 1. Check Python syntax across codebase if python files exist
+if ls expense_tracker/*.py >/dev/null 2>&1; then
+    echo "1. Checking Python syntax..."
+    python -m py_compile expense_tracker/*.py 2>/dev/null
+    if [ $? -ne 0 ]; then
+        echo "❌ [ERROR] Syntax check failed! Please fix syntax errors before committing."
+        exit 1
+    fi
+    echo "   ✅ Syntax check passed."
+else
+    echo "1. Skipping syntax check (no source files yet)."
+fi
+
+# 2. Run automated test suite if tests exist
+if [ -d "tests" ] && ls tests/test_*.py >/dev/null 2>&1; then
+    echo "2. Running unit tests..."
+    python -m unittest discover -s tests -p "test_*.py" -q
+    TEST_EXIT_CODE=$?
+
+    if [ $TEST_EXIT_CODE -ne 0 ]; then
+        echo "❌ [ERROR] Unit tests failed! Aborting commit."
+        echo "   Run 'python -m unittest discover -s tests' locally to debug."
+        exit 1
+    fi
+    echo "   ✅ All unit tests passed."
+else
+    echo "2. Skipping unit tests (test suite not yet added)."
+fi
+
+echo "=================================================="
+echo "🎉 Pre-commit checks passed! Proceeding with commit."
+echo "=================================================="
+exit 0
