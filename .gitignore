@@ -13,8 +13,9 @@ venv/
 htmlcov/
 .pytest_cache/
 
-# User data files (default data file can be tracked with a sample or ignored)
-# Keep sample_expenses.json tracked, but ignore local test runs
+# User runtime data files
+expenses.json
+*.csv
 expenses_test*.json
 *.tmp
 .DS_Store
